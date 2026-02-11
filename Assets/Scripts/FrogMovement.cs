@@ -12,6 +12,7 @@ public class FrogMovement : MonoBehaviour
     float car3Distance;
     public TextMeshProUGUI endText;
     public GameObject endTextObject;
+    public float victoryLine = 4; // remember to change this to be a position relative to the top of the screen
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,11 +47,19 @@ public class FrogMovement : MonoBehaviour
         car2Distance = Vector2.Distance(transform.position, car2.transform.position);
         car3Distance = Vector2.Distance(transform.position, car3.transform.position);
 
+        // if the frog is hit by a car
         if (car1Distance < 1 || car2Distance < 1 || car3Distance < 1)
         {
             endText.text = "You Lose";
             endTextObject.SetActive(true);
             gameObject.SetActive(false);
+        }
+
+        // if the frog successfully crosses the road
+        if (transform.position.y >= victoryLine)
+        {
+            endText.text = "You Win";
+            endTextObject.SetActive(true);
         }
     }
 }
