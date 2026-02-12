@@ -14,12 +14,11 @@ public class FrogMovement : MonoBehaviour
     public GameObject endTextObject;
     public float victoryLine = 4; // remember to change this to be a position relative to the top of the screen
     public AudioSource victorySound;
-    public AudioClip frogSound;
+    public AudioSource frogSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudioSource frogSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,19 +28,22 @@ public class FrogMovement : MonoBehaviour
         if (Keyboard.current.upArrowKey.wasPressedThisFrame)
         {
             newPos.y += 1;
-            // frogSource.frogSound.Play();
+            frogSound.Play();
         }
         if (Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             newPos.y -= 1;
+            frogSound.Play();
         }
         if (Keyboard.current.leftArrowKey.wasPressedThisFrame)
         {
             newPos.x -= 1;
+            frogSound.Play();
         }
         if (Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             newPos.x += 1;
+            frogSound.Play();
         }
         transform.position = newPos;
 
@@ -63,7 +65,7 @@ public class FrogMovement : MonoBehaviour
         {
             endText.text = "You Win";
             endTextObject.SetActive(true);
-            victorySound.Play();
+            //victorySound.Play();
         }
     }
 }

@@ -334,6 +334,7 @@ MonoBehaviour:
   endTextObject: {fileID: 997440449}
   victoryLine: 4
   victorySound: {fileID: 1073605971}
+  frogSound: {fileID: 284367447}
 --- !u!82 &284367447
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345,7 +346,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a15a5e5be25f7e8468fc5898ca1a115b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -861,7 +862,7 @@ GameObject:
   - component: {fileID: 1073605972}
   - component: {fileID: 1073605971}
   m_Layer: 0
-  m_Name: VictorySound
+  m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,7 +879,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: a15a5e5be25f7e8468fc5898ca1a115b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 3c53d6cb141c2764e9bc4c5a443dde4b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
