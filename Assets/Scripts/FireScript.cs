@@ -21,6 +21,9 @@ public class FireScript : MonoBehaviour
             newPos.x = buildingBody.transform.position.x + buildingBody.transform.localScale.x / 2;
         }
 
+        // sets y position to something random within the height of the building
+        newPos.y = Random.Range(buildingBody.transform.position.y - buildingBody.transform.localScale.y / 2, buildingBody.transform.position.y + buildingBody.transform.localScale.y / 2);
+
         transform.position = newPos;
     }
 
