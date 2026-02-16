@@ -25,6 +25,8 @@ public class HoseScript : MonoBehaviour
         if (switchSide == false && newPos.x < 0)
         {
             newPos.y = mousePos.y;
+
+            // spray water when a key is held down
             if (Keyboard.current.anyKey.isPressed)
             {
                 water.SetActive(true);
@@ -39,6 +41,8 @@ public class HoseScript : MonoBehaviour
         if (switchSide == true && newPos.x > 0)
         {
             newPos.y = mousePos.y;
+
+            // spray water when a key is held down
             if (Keyboard.current.anyKey.isPressed)
             {
                 water.SetActive(true);
@@ -52,6 +56,7 @@ public class HoseScript : MonoBehaviour
         transform.position = newPos;
     }
 
+    // change the hose that the player controls
     public void SwitchSide()
     {
         switchSide = !switchSide;

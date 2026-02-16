@@ -2,10 +2,26 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
+    int whichSide;
+    public GameObject buildingBody;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Vector2 newPos = transform.position;
+
+        // sets the object's x position to a random side of the building (left or right)
+        whichSide = Random.Range(0, 2);
+        if (whichSide == 0)
+        {
+            newPos.x = buildingBody.transform.position.x - buildingBody.transform.localScale.x / 2;
+        }
+        if (whichSide == 1)
+        {
+            newPos.x = buildingBody.transform.position.x + buildingBody.transform.localScale.x / 2;
+        }
+
+        transform.position = newPos;
     }
 
     // Update is called once per frame
