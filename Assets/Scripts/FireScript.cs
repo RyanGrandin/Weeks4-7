@@ -4,10 +4,14 @@ public class FireScript : MonoBehaviour
 {
     int whichSide;
     public GameObject buildingBody;
+    public SpriteRenderer water;
+    public GameObject firePrefab;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        buildingBody.GetComponent<GameObject>();
+        
         Vector2 newPos = transform.position;
 
         // sets the object's x position to a random side of the building (left or right)
@@ -30,6 +34,10 @@ public class FireScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // runs if there is fire in the water
+        if (water.bounds.Contains(transform.position)) {
+            Instantiate(firePrefab);
+            Destroy(gameObject);
+        }
     }
 }
