@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,23 +6,28 @@ public class HoseScript : MonoBehaviour
 {
     bool switchSide = false;
     public GameObject water;
-    public SpriteRenderer waterSR;
     int whichSide;
     public GameObject buildingBody;
     public GameObject firePrefab;
-    public GameObject fire;
-    public GameObject firstFire;
+    GameObject fire;
+    public List<GameObject> fires;
+    public GameObject startText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        fire = firstFire;
-        fire.transform.position = FirePosition();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            startText.SetActive(false);
+            Instantiate(firePrefab, FirePosition(), Quaternion.identity);
+        }
+        
         // put position into a new Vector2 so that its values may be changed
         Vector2 newPos = transform.position;
 
@@ -34,7 +40,7 @@ public class HoseScript : MonoBehaviour
             newPos.y = mousePos.y;
 
             // spray water when a key is held down
-            if (Keyboard.current.anyKey.isPressed)
+            if (Keyboard.current.spaceKey.isPressed)
             {
                 water.SetActive(true);
             }
@@ -62,8 +68,9 @@ public class HoseScript : MonoBehaviour
 
         transform.position = newPos;
 
+        float watFireDist = Vector2.Distance(water.transform.position, fire.transform.position);
         // runs if there is fire in the water
-        if (waterSR.bounds.Contains(FirePosition()))
+        if (water.activeInHierarchy && watFireDist < 3)
         {
             Debug.Log("Water contains fire. Fire Position = " + FirePosition());
             Destroy(fire);
