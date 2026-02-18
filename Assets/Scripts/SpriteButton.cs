@@ -8,6 +8,8 @@ public class SpriteButton : MonoBehaviour
     public Color highlightedColour;
     public Color pressedColour;
 
+    public DecouplingCode functionality;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,7 +47,7 @@ public class SpriteButton : MonoBehaviour
 
     void LeftButtonWasPressedThisFrame()
     {
-
+        functionality.ChangeSprite();
     }
 
     void LeftButtonIsPressed()

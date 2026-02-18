@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 2067744513}
   - component: {fileID: 2067744512}
   - component: {fileID: 2067744514}
+  - component: {fileID: 2067744515}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Untagged
@@ -443,6 +444,26 @@ MonoBehaviour:
   defaultColour: {r: 1, g: 1, b: 1, a: 1}
   highlightedColour: {r: 1, g: 0.6959056, b: 0, a: 1}
   pressedColour: {r: 0.8490566, g: 0.1329654, b: 0.1329654, a: 1}
+  functionality: {fileID: 2067744515}
+--- !u!114 &2067744515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067744511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a2d6fa5a69040b4eb6e21a429aeefee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 2067744512}
+  sprites:
+  - {fileID: -5064401156898091283, guid: d0af11330ed425845acf5dac8d1b8b5e, type: 3}
+  - {fileID: -983296130339864622, guid: f1d519290bc49d94dabd1833470c3eb4, type: 3}
+  - {fileID: 21300000, guid: eb99a2335dce5e04b97b29675ddef408, type: 3}
+  speed: 0
+  direction: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
